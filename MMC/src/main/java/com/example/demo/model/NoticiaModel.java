@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="noticiaModel")
+@Table(name="noticia")
 public class NoticiaModel implements Serializable {
 	
 	/**
@@ -88,9 +88,7 @@ public class NoticiaModel implements Serializable {
 		this.contenidoNoticia = contenidoNoticia;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 	
 	
 	
