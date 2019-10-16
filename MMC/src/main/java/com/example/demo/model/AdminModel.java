@@ -25,6 +25,9 @@ public class AdminModel implements Serializable {
 	@Column(name = "id_admin")
 	private int idAdmin;
 	
+	@Column(name = "nombre_admin")
+	private String nombreAdmin;
+	
 	@Column(name = "rut_admin")
 	private String rutAdmin;
 	
@@ -37,12 +40,12 @@ public class AdminModel implements Serializable {
 	@Column(name = "telefono_admin")
 	private long telefonoAdmin;
 	
+	
 	@Column(name = "fechaNac_admin")
 	private Date fechaNac;
 	
 	@Column(name = "direccion_admin")
 	private String direccionAdmin;
-	
 	
 	@Email
 	@Column(name = "email_admin")
@@ -52,9 +55,10 @@ public class AdminModel implements Serializable {
 		
 	}
 
-	public AdminModel(int idAdmin, String rutAdmin, String apellidoMaterno, String apellidoPaterno, long telefonoAdmin,
-			Date fechaNac, String direccionAdmin, String emailAdmin) {
+	public AdminModel(int idAdmin, String nombreAdmin, String rutAdmin, String apellidoMaterno, String apellidoPaterno,
+			long telefonoAdmin, Date fechaNac, String direccionAdmin, @Email String emailAdmin) {
 		this.idAdmin = idAdmin;
+		this.nombreAdmin = nombreAdmin;
 		this.rutAdmin = rutAdmin;
 		this.apellidoMaterno = apellidoMaterno;
 		this.apellidoPaterno = apellidoPaterno;
@@ -70,6 +74,14 @@ public class AdminModel implements Serializable {
 
 	public void setIdAdmin(int idAdmin) {
 		this.idAdmin = idAdmin;
+	}
+
+	public String getNombreAdmin() {
+		return nombreAdmin;
+	}
+
+	public void setNombreAdmin(String nombreAdmin) {
+		this.nombreAdmin = nombreAdmin;
 	}
 
 	public String getRutAdmin() {
@@ -129,8 +141,15 @@ public class AdminModel implements Serializable {
 	}
 	
 	
-	
+
 	
 	
 
 }
+	
+	
+	
+	
+	
+
+

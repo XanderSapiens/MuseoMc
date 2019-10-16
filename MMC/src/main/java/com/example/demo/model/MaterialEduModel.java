@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="materialEdu")
+@Table(name="materialedu")
 public class MaterialEduModel implements Serializable {
 
 	/**

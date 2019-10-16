@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,13 +20,26 @@ public class TallerModel implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "id_taller")
 	private int idTaller;
+	
+	@Column(name = "nombre_taller")
 	private String nombreTaller;
+	
+	@Column(name = "descr_taller")
 	private String descrTaller;
+	
+	@Column(name = "encargado_taller")
 	private String encargadoTaller;
+	
+	@Column(name = "cantAlumnos_taller")
 	private int cantAlumnosTaller;
+	
+	@Column(name = "horario_taller")
 	private String horarioTaller;
 	
+	
+
 	//Material hacer relacion
 
 }
