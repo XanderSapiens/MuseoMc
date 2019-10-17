@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<title th:text="${title}"></title>
 	</head>
-	<body style="background-color: #e4e6e7">
+	<body > <!-- style="background-color: #e4e6e7" -->
 		<header th:replace="layout/header :: header"></header>
 		<br><br><br>
 		<div class="container mt-5 mb-5">
@@ -17,11 +17,11 @@
 			</div>
 				
 			<br> 
-			<a href="/teacher/teacherForm"><button type="button" class="btn btn-primary mb-3">Crear</button></a>
+			<a href="/admin/adminForm"><button type="button" class="btn btn-primary mb-3">Crear</button></a>
 			
 			<table id="example" class="table table-bordered table-striped">
 				<thead>
-					<tr>
+					<tr class="text-center">
 						<th>Nombre</th>
 						<th>Rut</th>
 						<th>Apellido Paterno</th>
@@ -35,17 +35,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="adminModel: ${admins}">
+					<tr th:each="admin: ${admins}">
 				
-					<td th:text="${adminModel.nombreAdmin}"></td>
-					<td th:text="${adminModel.rutAdmin}"></td>
-					<td th:text="${adminModel.apellidoPaterno}"></td>
-					<td th:text="${adminModel.apellidoMaterno}"></td>
-					<td th:text="${adminModel.telefonoAdmin}"></td>
-					<td th:text="${adminModel.direccionAdmin}"></td>
-					<td th:text="${adminModel.emailAdmin}"></td>
-					<td style="text-align: center"><a th:href="@{'/adminModel/adminForm/' + ${adminModel.id}}"><button type="button" class="btn btn-success">Editar</button></a></td>
-					<td style="text-align: center"><a th:href="@{'/adminModel/delete/' + ${adminModel.id}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+					<td th:text="${admin.nombreAdmin}"></td>
+					<td th:text="${admin.rutAdmin}"></td>
+					<td th:text="${admin.apellidoPaterno}"></td>
+					<td th:text="${admin.apellidoMaterno}"></td>
+					<td th:text="${admin.telefonoAdmin}"></td>
+					<td th:text="${admin.fechaNacAdmin}"></td>
+					<td th:text="${admin.direccionAdmin}"></td>
+					<td th:text="${admin.emailAdmin}"></td>
+					<td style="text-align: center"><a th:href="@{'/admin/adminForm/' + ${admin.idAdmin}}"><button type="button" class="btn btn-success">Editar</button></a></td>
+					<td style="text-align: center"><a th:href="@{'/admin/delete/' + ${admin.idAdmin}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
 				</tr>
 			</tbody>
 			

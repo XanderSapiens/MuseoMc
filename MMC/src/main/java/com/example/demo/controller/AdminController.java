@@ -35,7 +35,7 @@ public class AdminController {
 	@PostMapping("/save")
 	public String saveAdmin(@Valid AdminModel adminModel, Model model) {
 		adminService.save(adminModel);
-		return "redirect:/adminList";
+		return "redirect:/admin/adminList";
 	}
 	
 	//Modificar
@@ -61,7 +61,7 @@ public class AdminController {
 	@RequestMapping("/delete/{id}")
 	public String deleteAdmin(@PathVariable(name = "id") int id) {
 		adminService.delete(id);
-		return "redirect:/adminList";     
+		return "redirect:/admin/adminList";     
 	}
 
 }

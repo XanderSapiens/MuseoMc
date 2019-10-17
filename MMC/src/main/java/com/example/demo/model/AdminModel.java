@@ -18,6 +18,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 
 /**
@@ -53,9 +55,10 @@ public class AdminModel implements Serializable {
 	@Column(name = "telefono_admin")
 	private long telefonoAdmin;
 	
-	/*@Temporal(TemporalType.DATE)
-	@Column(name = "fechaNac_admin")
-	private Date fechaNacAdmin;*/
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "nac_admin")
+	private Date fechaNacAdmin;
 	
 	
 	@Column(name = "direccion_admin")
@@ -86,7 +89,7 @@ public class AdminModel implements Serializable {
 		this.apellidoMaterno = apellidoMaterno;
 		this.apellidoPaterno = apellidoPaterno;
 		this.telefonoAdmin = telefonoAdmin;
-		//this.fechaNacAdmin = fechaNacAdmin;
+		this.fechaNacAdmin = fechaNacAdmin;
 		this.direccionAdmin = direccionAdmin;
 		this.emailAdmin = emailAdmin;
 	}
@@ -139,13 +142,13 @@ public class AdminModel implements Serializable {
 		this.telefonoAdmin = telefonoAdmin;
 	}
 
-	/*public Date getFechaNacAdmin() {
+	public Date getFechaNacAdmin() {
 		return fechaNacAdmin;
 	}
 
 	public void setFechaNacAdmin(Date fechaNacAdmin) {
 		this.fechaNacAdmin = fechaNacAdmin;
-	}*/
+	}
 
 	public String getDireccionAdmin() {
 		return direccionAdmin;
