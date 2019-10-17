@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	
+	<head th:replace="layout/header :: head">
+		<meta charset="UTF-8">
+		<title th:text="${title}"></title>
+	</head>
+	<body style="background-color: #e4e6e7">
+		<header th:replace="layout/header :: header"></header>
+		<br><br><br>
+		<div class="container mt-5 mb-5">
+			<br>
+			<div align="center">
+				<h2>Lista de Administradores</h2>
+			</div>
+				
+			<br> 
+			<a href="/teacher/teacherForm"><button type="button" class="btn btn-primary mb-3">Crear</button></a>
+			
+			<table id="example" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Rut</th>
+						<th>Apellido Paterno</th>
+						<th>Apellido Materno</th>
+						<th>Telefono</th>
+						<th>Fecha de Nacimiento</th>
+						<th>Direccion</th>
+						<th>Email</th>
+						<th>Modificar</th>
+						<th>Borrar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="adminModel: ${admins}">
+				
+					<td th:text="${adminModel.nombreAdmin}"></td>
+					<td th:text="${adminModel.rutAdmin}"></td>
+					<td th:text="${adminModel.apellidoPaterno}"></td>
+					<td th:text="${adminModel.apellidoMaterno}"></td>
+					<td th:text="${adminModel.telefonoAdmin}"></td>
+					<td th:text="${adminModel.direccionAdmin}"></td>
+					<td th:text="${adminModel.emailAdmin}"></td>
+					<td style="text-align: center"><a th:href="@{'/adminModel/adminForm/' + ${adminModel.id}}"><button type="button" class="btn btn-success">Editar</button></a></td>
+					<td style="text-align: center"><a th:href="@{'/adminModel/delete/' + ${adminModel.id}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+				</tr>
+			</tbody>
+			
+			
+			</table>
+		
+		</div>
+
+
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+		<script th:src="@{/js/datatables.min.js}"></script>
+		<script th:src="@{/js/datatable-language.js}"></script>
+	</body>
+</html>

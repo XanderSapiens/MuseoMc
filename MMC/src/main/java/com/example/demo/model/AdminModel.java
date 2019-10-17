@@ -2,15 +2,28 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 
+
+
+/**
+ * @author xande
+ *
+ */
 @Entity
 @Table(name= "admin")
 public class AdminModel implements Serializable {
@@ -40,9 +53,10 @@ public class AdminModel implements Serializable {
 	@Column(name = "telefono_admin")
 	private long telefonoAdmin;
 	
-	
+	/*@Temporal(TemporalType.DATE)
 	@Column(name = "fechaNac_admin")
-	private Date fechaNac;
+	private Date fechaNacAdmin;*/
+	
 	
 	@Column(name = "direccion_admin")
 	private String direccionAdmin;
@@ -51,19 +65,28 @@ public class AdminModel implements Serializable {
 	@Column(name = "email_admin")
 	private String emailAdmin;
 	
+	/**
+	 * @ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name= "admin_noticia", 
+	joinColumns = {@JoinColumn(name="idAdmin")},
+	inverseJoinColumns = {@JoinColumn(name="idNoticia")})
+	private List<NoticiaModel> noticias;
+	 */
+	
+	
 	public AdminModel() {
 		
 	}
 
 	public AdminModel(int idAdmin, String nombreAdmin, String rutAdmin, String apellidoMaterno, String apellidoPaterno,
-			long telefonoAdmin, Date fechaNac, String direccionAdmin, @Email String emailAdmin) {
+			long telefonoAdmin, Date fechaNacAdmin, String direccionAdmin, @Email String emailAdmin) {
 		this.idAdmin = idAdmin;
 		this.nombreAdmin = nombreAdmin;
 		this.rutAdmin = rutAdmin;
 		this.apellidoMaterno = apellidoMaterno;
 		this.apellidoPaterno = apellidoPaterno;
 		this.telefonoAdmin = telefonoAdmin;
-		this.fechaNac = fechaNac;
+		//this.fechaNacAdmin = fechaNacAdmin;
 		this.direccionAdmin = direccionAdmin;
 		this.emailAdmin = emailAdmin;
 	}
@@ -116,13 +139,13 @@ public class AdminModel implements Serializable {
 		this.telefonoAdmin = telefonoAdmin;
 	}
 
-	public Date getFechaNac() {
-		return fechaNac;
+	/*public Date getFechaNacAdmin() {
+		return fechaNacAdmin;
 	}
 
-	public void setFechaNac(Date fechaNac) {
-		this.fechaNac = fechaNac;
-	}
+	public void setFechaNacAdmin(Date fechaNacAdmin) {
+		this.fechaNacAdmin = fechaNacAdmin;
+	}*/
 
 	public String getDireccionAdmin() {
 		return direccionAdmin;
