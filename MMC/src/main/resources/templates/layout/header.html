@@ -5,6 +5,8 @@
 <link href="../../webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	rel="stylesheet">
 <title th:text="${title}"></title>
+<!-- css Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <!-- Style.css -->
 <link href="../static/css/style.css" rel="stylesheet"
 	th:href="@{/css/style.css}">
@@ -36,15 +38,13 @@
 				th:src="@{/img/logo.png}" src=".../static/img/logo.png" width="140"
 				height="60" alt=""></a> -->
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/admin/adminList}">Home</a></li>
 
 					<!--  li class="nav-item"><a class="nav-link"
 						th:href="@{/student/studentList}">Estudiantes</a></li>
@@ -54,32 +54,62 @@
 					<li class="nav-item"><a class="nav-link"
 						th:href="@{/teacher/myPerfil}">Mi Perfil</a></li> -->
 						
-					<li class="nav-item dropdown my-2 mr-2"><a class="nav-link"
-						th:href="@{/admin/adminList}">Home</a></li>
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/admin/adminList}">Home</a></li>
+					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/admin/adminList}">Administradores</a></li>
+					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/contacto/contactoList}">Contactos</a></li>
 						
-					<li class="nav-item dropdown">
+					<li class="nav-item dropdown my-2 mr-2">
         				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-        				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Perfil</a>
+        				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Perfil</a>
         				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
           					<a class="dropdown-item" href="#">Action</a>
           					<a class="dropdown-item" href="#">Another action</a>
           				<div class="dropdown-divider"></div>
           				<a class="dropdown-item" href="#">Something else here</a>
         				</div>
-      					</li>
+      				</li>
+      				
 
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
+					<ul class="navbar-nav mr-auto ">
+						<li class="nav-item dropdown my-2 mr-2">
+        					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+         						 Mi Perfil
+        					</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         					 	<a class="dropdown-item" href="#">Action</a>
+          						<a class="dropdown-item" href="#">Another action</a>
+         					 	<a class="dropdown-item" href="#">Something else here</a>
+       						</div>
+     					</li>
+					
+					
+					</ul>
 					<a th:href="@{/teacher/login}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">Iniciar Sesión</button></a>
 					<a th:href="@{/teacher/register}"><button class="btn btn-danger my-2 my-sm-0" type="button">Regístrate</button></a>
 				</form>
 			</div>
+			
 		</nav>
+		
+			
+				
+			
+		
 	</header>
 	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 	<script th:src="@{/js/popper.min.js}"></script>
 	<script th:src="@{/js/jquery-ui.min.js}"></script>
 	<script th:src="@{/js/datatables.min.js}"></script>
 	<script th:src="@{/js/datatable-language.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

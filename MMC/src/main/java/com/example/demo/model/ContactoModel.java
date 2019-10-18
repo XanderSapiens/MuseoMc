@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "contacto")
@@ -26,6 +27,7 @@ public class ContactoModel implements Serializable {
 	@Column(name = "nombre_contacto")
 	private String nombreContacto;
 	
+	@Email
 	@Column(name = "email_contacto")
 	private String emailContacto;
 	
