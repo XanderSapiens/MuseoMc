@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.model.AdminModel;
+
 import com.example.demo.model.ContactoModel;
 
 import com.example.demo.service.ContactoService;
