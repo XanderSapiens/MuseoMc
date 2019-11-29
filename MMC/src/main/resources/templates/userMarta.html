@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/userHeader :: head">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/userHeader :: header"></header>
+	<br><br><br>
+	
+	 <!--Inicio Breadumbs-->
+        
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent pl-0 ">
+              <li class="breadcrumb-item"><a  href="index.html">Inicio </a></li>
+                <li class="breadcrumb-item" ><a href="marta.html">Marta Colvin</a> </li>
+            </ol>
+          </nav>
+      </div>
+<!--Fin Breadumbs-->
+
+    <div class="container mt-5">
+
+        <!--Biografia-->
+        <div class="row">
+                
+                <div class="col-7">
+                    <h4>Biografia</h4>
+                    <p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consectetur</p>
+                </div>
+                <div class="col-5">
+                    <img th:src="@{/img/marta.jpg}" src="./static/img/marta.jpg"  class="" alt="...">
+
+              </div>
+                
+
+        </div>
+        <!--Premio y distinciones-->
+        <div class="row">
+                <h4>Premios y distinciones</h4>
+                <p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                        vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consectetur</p>
+
+        </div>
+            
+    </div>
+
+</body>
+</html>

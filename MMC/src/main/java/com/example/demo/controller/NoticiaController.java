@@ -21,23 +21,23 @@ public class NoticiaController {
 	private NoticiaService noticiaService;
 	
 	/*Crear*/
-	@GetMapping("/formNoticia")
+	@GetMapping("/noticiaForm")
 	public String formNoticia(Model model) {
 		NoticiaModel noticiaModel = new NoticiaModel();
 		model.addAttribute("noticialModel",noticiaModel);
 		model.addAttribute("noticias",noticiaService.listAll());
-		return "formNoticia";
+		return "noticiaForm";
 	}
 	
 	/*Post mapping de crear, guarda noticia y muestra la lista de noticias*/
 	@PostMapping("/save")
 	public String saveNoticia(@Valid NoticiaModel noticiaModel, Model model) {
 		noticiaService.save(noticiaModel);
-		return "redirect:/noticia/listNoticia";
+		return "redirect:/noticia/noticiaList";
 	}
 	
 	//Modificar
-	@GetMapping(value = "/formNoticia/{id}")
+	@GetMapping(value = "/noticiaForm/{id}")
 	public String modificarNoticia(@PathVariable("id") Integer id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("noticiaModel", noticiaService.getId(id));
@@ -45,21 +45,21 @@ public class NoticiaController {
 		}else {
 			model.addAttribute("noticiaModel", new NoticiaModel());
 		}
-		return "formNoticia";
+		return "noticiaForm";
 	}
 	
 	//Listar Todas las Noticias
-	@GetMapping("/listNoticia")
+	@GetMapping("/noticiaList")
 	public String listarNoticias(Model model) {
 		model.addAttribute("noticias", noticiaService.listAll());
-		return "teacherList";
+		return "noticiaList";
 	}
 		
 	//Borrar una noticia por su id
 	@RequestMapping("/delete/{id}")
 	public String deleteNoticia(@PathVariable(name = "id") int id) {
 		noticiaService.delete(id);
-		return "redirect:/noticia/listNoticia";     
+		return "redirect:/noticia/noticiaList";     
 	}
 	
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/header :: head">
+	<meta charset="UTF-8">
+	<title th:text="${title}"></title>
+</head>
+<body>
+
+<header th:replace="layout/header :: header"></header>
+		<br><br><br>
+		<div class="container mt-5 mb-5">
+			<br>
+			<div align="center">
+				<h2>Lista de Convocatorias</h2>
+			</div>
+				
+			<br> 
+			<a href="/convocatoria/convocatoriaForm"><button type="button" class="btn btn-primary mb-3">Crear</button></a>
+			
+			<table id="example" class="table table-bordered table-striped">
+				<thead>
+					<tr class="text-center">
+						<th>Nombre</th>
+						<th>Descripcion</th>
+						<th>Horario</th>
+						<th>Fecha</th>
+						<th>Estado</th>
+						<th>Cantidad de personas</th>
+						
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="convocatoria: ${convocatorias}">
+				
+					<td th:text="${convocatoria.nombreConvocatoria}"></td>
+					<td th:text="${convocatoria.descrConvocatoria}"></td>
+					<td th:text="${convocatoria.horarioConvocatoria}"></td>
+					<td th:text="${convocatoria.fechaConvocatoria}"></td>
+					<td th:text="${convocatoria.estadoConvocatoria}"></td>
+					<td th:text="${convocatoria.cantPersonasConvocatoria}"></td>
+				
+					<td style="text-align: center"><a th:href="@{'/convocatoria/convocatoriaForm/' + ${convocatoria.idConvocatoria}}"><button type="button" class="btn btn-success">Editar</button></a></td>
+					<td style="text-align: center"><a th:href="@{'/convocatoria/delete/' + ${convocatoria.idConvocatoria}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+				</tr>
+			</tbody>
+			
+			
+			</table>
+		
+		</div>
+
+
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+		<script th:src="@{/js/datatables.min.js}"></script>
+		<script th:src="@{/js/datatable-language.js}"></script>

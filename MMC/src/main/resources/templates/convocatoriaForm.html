@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header :: head">
+	<meta charset="UTF-8">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/header :: header"></header>
+	<br><br><br>
+	<div class="container">
+			<br>
+			<div align="center" class="mb-3">
+				<h2>Registrar Contacto</h2>
+			</div>
+			<div class="card" style="width: 40rem; margin: auto auto;">
+				<div class="card-body">
+					<br>
+					<form th:action="@{/convocatoria/save}" th:object="${convocatoriaModel}" method="post">
+						<input type="hidden" th:field="*{idConvocatoria}" readonly="readonly" />
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="nombreConvocatoria">Nombre:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="nombreConvocatoria" class="form-control" th:field="*{nombreConvocatoria}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="descrConvocatoria">Descripcion:</label>
+								</div>
+								<div class="col-10">
+									<textarea class="form-control" name="descrConvocatoria" rows="5" cols="44" th:field="*{descrConvocatoria}"></textarea>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="horarioConvocatoria">Horario:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="horarioConvocatoria" class="form-control" th:field="*{horarioConvocatoria}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="fechaConvocatoria">Fecha:</label>
+								</div>
+								<div class="col-10">
+									<input type="date" name="fechaConvocatoria" class="form-control" th:field="*{fechaConvocatoria}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="estadoConvocatoria">Estado:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="estadoConvocatoria" class="form-control" th:field="*{estadoConvocatoria}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="cantPersonasConvocatoria">Cantidad de personas:</label>
+								</div>
+								<div class="col-10">
+									<input type="number" name="cantPersonasConvocatoria" class="form-control" th:field="*{cantPersonasConvocatoria}" required>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-10" style="margin: auto auto;">
+									<button type="submit" class="btn btn-primary btn-block">Registrar</button>
+								</div>
+							</div>
+						</div>
+						
+					
+					</form>
+			
+				</div>
+			
+			
+			</div>
+		
+		</div>
+
+</body>
+</html>

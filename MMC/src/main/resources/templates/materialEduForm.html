@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header :: head">
+	<meta charset="UTF-8">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/header :: header"></header>
+	<br><br><br>
+	<div class="container">
+			<br>
+			<div align="center" class="mb-3">
+				<h2>Registrar Material Educativo</h2>
+			</div>
+			<div class="card" style="width: 40rem; margin: auto auto;">
+				<div class="card-body">
+					<br>
+					<form th:action="@{/materialEdu/save}" th:object="${materialEduModel}" method="post">
+						<input type="hidden" th:field="*{idMaterialEdu}" readonly="readonly" />
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="nombreMaterialEdu">Nombre:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="nombreMaterialEdu" class="form-control" th:field="*{nombreMaterialEdu}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="descrMaterialEdu">Descripcion:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="descrMaterialEdu" class="form-control" th:field="*{descrMaterialEdu}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="nivelMaterialEdu">Nivel Educacional:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="nivelMaterialEdu" class="form-control" th:field="*{nivelMaterialEdu}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="tipoMaterialEdu">Tipo:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="tipoMaterialEdu" class="form-control" th:field="*{tipoMaterialEdu}" required>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-10" style="margin: auto auto;">
+									<button type="submit" class="btn btn-primary btn-block">Registrar</button>
+								</div>
+							</div>
+						</div>
+						
+					
+					</form>
+			
+				</div>
+			
+			
+			</div>
+		
+		</div>
+
+</body>
+</html>

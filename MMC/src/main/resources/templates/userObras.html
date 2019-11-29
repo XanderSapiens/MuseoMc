@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/userHeader :: head">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/userHeader :: header"></header>
+	<br><br><br>
+
+	 <!--Inicio Breadumbs-->
+        
+        <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent pl-0 ">
+                      <li class="breadcrumb-item"><a  href="index.html">Inicio </a></li>
+                        <li class="breadcrumb-item" ><a href="obras.html">Obras</a> </li>
+                    </ol>
+                  </nav>
+              </div>
+        <!--Fin Breadumbs-->
+
+        <div class="container align-items-center">
+            <div class="row text-center">
+                <div class="col-4">
+                    <div class="h4 ml-5 text-center">Esculturas
+                    <br><br>
+                    </div>
+                     <div>
+                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                              </p><br>
+                   		<form class="form-inline my-2 my-lg-0">
+							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
+						</form>
+                    
+                    </div>
+                </div>
+                
+                
+                <div class="col-4">
+                    <div class="h4 ml-5 text-center">Bocetos
+                    <br><br>
+                    </div>
+                     <div>
+                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                              </p><br>
+                   		<form class="form-inline my-2 my-lg-0">
+							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
+						</form>
+                    
+                    </div>
+                </div>
+                
+                
+                <div class="col-4">
+                    <div class="h4 ml-5 text-center">Grabados
+                    <br><br>
+                    </div>
+                     <div>
+                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                              </p><br>
+                   		<form class="form-inline my-2 my-lg-0">
+							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
+						</form>
+                    
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row text-center mt-5">
+                <div class="col-4">
+                    <div class="h4 ml-5 text-center">Collage
+                    <br><br>
+                    </div>
+                     <div>
+                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                              </p><br>
+                   		<form class="form-inline my-2 my-lg-0">
+							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
+						</form>
+                    
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                    <div class="h4 ml-5 text-center">Maquetas
+                    <br><br>
+                    </div>
+                     <div>
+                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                              </p><br>
+                   		<form class="form-inline my-2 my-lg-0">
+							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
+						</form>
+                    
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+</body>
+</html>

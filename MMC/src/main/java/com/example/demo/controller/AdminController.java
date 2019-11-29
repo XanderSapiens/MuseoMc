@@ -22,6 +22,12 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
+	@PostMapping("/login")
+	public String login(@Valid AdminModel adminModel, Model model) {
+		adminService.save(adminModel);
+		return "redirect:/admin/adminList";
+	}
+	
 	/*Crear*/
 	@GetMapping("/adminForm")
 	public String formAdmin(Model model) {

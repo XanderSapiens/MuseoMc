@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../../webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	rel="stylesheet">
 <title th:text="${title}"></title>
@@ -62,8 +63,27 @@
 					
 					<li class="nav-item dropdown my-2 mr-2">
 					<a class="nav-link"	th:href="@{/contacto/contactoList}">Contactos</a></li>
-						
+					
 					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/convocatoria/convocatoriaList}">Convocatorias</a></li>
+					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/foto/fotoList}">Fotos</a></li>
+					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/materialEdu/materialEduList}">Materiales</a></li>
+					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/noticia/noticiaList}">Noticias</a></li>
+			
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/obra/obraList}">Obras</a></li>
+					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/taller/tallerList}">Talleres</a></li>
+					
+						
+					<!--  li class="nav-item dropdown my-2 mr-2">
         				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
         				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Perfil</a>
         				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -72,7 +92,7 @@
           				<div class="dropdown-divider"></div>
           				<a class="dropdown-item" href="#">Something else here</a>
         				</div>
-      				</li>
+      				</li-->
       				
 
 				</ul>

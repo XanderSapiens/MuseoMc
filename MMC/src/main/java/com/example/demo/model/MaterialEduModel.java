@@ -20,19 +20,19 @@ public class MaterialEduModel implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id_materialEdu")
+	@Column(name = "id_materialedu")
 	private int idMaterialEdu;
 	
-	@Column(name = "nombre_materialEdu")
+	@Column(name = "nombre_materialedu")
 	private String nombreMaterialEdu;
 	
-	@Column(name = "descr_materialEdu")
+	@Column(name = "descr_materialedu")
 	private String descrMaterialEdu;
 	
-	@Column(name = "nivel_materialEdu")
+	@Column(name = "nivel_materialedu")
 	private String nivelMaterialEdu;
 	
-	@Column(name = "tipo_materialEdu")
+	@Column(name = "tipo_materialedu")
 	private String tipoMaterialEdu;
 
 
