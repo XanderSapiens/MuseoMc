@@ -20,8 +20,11 @@
 				<thead>
 					<tr class="text-center">
 						<th>Nombre</th>
+						<th>Imagen</th>
 						<th>Descripcion</th>
 						<th>Año</th>
+						<th>Editar</th>
+						<th>Eliminar</th>
 						
 						
 					</tr>
@@ -30,6 +33,7 @@
 					<tr th:each="foto: ${fotos}">
 				
 					<td th:text="${foto.nombreFoto}"></td>
+					<td th:text="${foto.imgFoto}"></td>
 					<td th:text="${foto.descrFoto}"></td>
 					<td th:text="${foto.anoFoto}"></td>
 					

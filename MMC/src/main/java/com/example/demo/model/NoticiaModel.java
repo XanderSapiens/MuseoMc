@@ -35,6 +35,10 @@ public class NoticiaModel implements Serializable {
 	private String tituloNoticia;
 	
 	
+	@Lob
+	@Column(name = "img_noticia")
+	private String imgNoticia;
+	
 	
 	@Lob
 	@Column(name = "subtitulo_noticia")
@@ -49,9 +53,11 @@ public class NoticiaModel implements Serializable {
 	public NoticiaModel() {
 	}
 
-	public NoticiaModel(int idNoticia, String tituloNoticia, String subtituloNoticia, String contenidoNoticia) {
+	public NoticiaModel(int idNoticia, String tituloNoticia, String imgNoticia, String subtituloNoticia,
+			String contenidoNoticia) {
 		this.idNoticia = idNoticia;
 		this.tituloNoticia = tituloNoticia;
+		this.imgNoticia = imgNoticia;
 		this.subtituloNoticia = subtituloNoticia;
 		this.contenidoNoticia = contenidoNoticia;
 	}
@@ -59,7 +65,7 @@ public class NoticiaModel implements Serializable {
 	public int getIdNoticia() {
 		return idNoticia;
 	}
-	
+
 	public void setIdNoticia(int idNoticia) {
 		this.idNoticia = idNoticia;
 	}
@@ -70,6 +76,14 @@ public class NoticiaModel implements Serializable {
 
 	public void setTituloNoticia(String tituloNoticia) {
 		this.tituloNoticia = tituloNoticia;
+	}
+
+	public String getImgNoticia() {
+		return imgNoticia;
+	}
+
+	public void setImgNoticia(String imgNoticia) {
+		this.imgNoticia = imgNoticia;
 	}
 
 	public String getSubtituloNoticia() {
@@ -88,6 +102,13 @@ public class NoticiaModel implements Serializable {
 		this.contenidoNoticia = contenidoNoticia;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+
+	
 	
 	
 	

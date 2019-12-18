@@ -7,19 +7,23 @@
 </head>
 <body>
 	<header th:replace="layout/userHeader :: header"></header>
-	<br><br><br>
+	<br>
 	
 	 <!--Inicio Breadumbs-->
         
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent pl-0 ">
-              <li class="breadcrumb-item"><a  href="index.html">Inicio </a></li>
-                <li class="breadcrumb-item" ><a href="mediacion.html">Mediacion y Educación</a> </li>
+              <li class="breadcrumb-item"><a  th:href="@{/user/userIndex}">Inicio </a></li>
+                <li class="breadcrumb-item" ><a th:href="@{/user/userMediacion}">Mediacion y Educación</a> </li>
             </ol>
           </nav>
       </div>
 <!--Fin Breadumbs-->
 
+
+ <br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        <br><br>
 </body>
 </html>

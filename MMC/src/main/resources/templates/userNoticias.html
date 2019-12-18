@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/header :: head">
+	<meta charset="UTF-8">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/userheader :: header"></header>
+		<br>
+		<div class="container mt-5 mb-5">
+			<br>
+			<div>
+				<h3>Lista de Noticias</h3>
+			</div>
+				
+			<br> 
+			
+			
+			<table id="example" class="table table-bordered table-striped">
+				<thead>
+					<tr class="text-center">
+						<th>Titulo</th>
+						<th>Subtitulo</th>
+						<th>Contenido</th>
+					
+						
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="noticia: ${noticias}">
+				
+					<td th:text="${noticia.tituloNoticia}"></td>
+						<td th:text="${noticia.subtituloNoticia}"></td>
+					<td th:text="${noticia.contenidoNoticia}"></td>
+				
+					
+				</tr>
+			</tbody>
+			
+			
+			</table>
+		
+		</div>
+ <br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        <br><br>
+
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+		<script th:src="@{/js/datatables.min.js}"></script>
+		<script th:src="@{/js/datatable-language.js}"></script>
+
+</body>
+</html>

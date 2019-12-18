@@ -7,15 +7,15 @@
 </head>
 <body>
 	<header th:replace="layout/userHeader :: header"></header>
-	<br><br><br>
+	<br>
 	
 	 <!--Inicio Breadumbs-->
         
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent pl-0 ">
-              <li class="breadcrumb-item"><a  href="index.html">Inicio </a></li>
-                <li class="breadcrumb-item" ><a href="marta.html">Marta Colvin</a> </li>
+              <li class="breadcrumb-item"><a th:href="@{/user/userIndex}">Inicio </a></li>
+                <li class="breadcrumb-item" ><a th:href="@{/user/userMarta}">Marta Colvin</a> </li>
             </ol>
           </nav>
       </div>
@@ -61,6 +61,10 @@
         </div>
             
     </div>
+    
+     <br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        <br><br>
 
 </body>
 </html>

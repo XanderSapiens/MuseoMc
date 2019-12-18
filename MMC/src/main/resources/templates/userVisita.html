@@ -7,19 +7,78 @@
 </head>
 <body>
 	<header th:replace="layout/userHeader :: header"></header>
-	<br><br><br>
+	<br>
 	
 	<!--Inicio Breadumbs-->
         
         <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent pl-0 ">
-                      <li class="breadcrumb-item"><a  href="index.html">Inicio </a></li>
-                        <li class="breadcrumb-item" ><a href="visita.html">Visita nuestro museo</a> </li>
+                      <li class="breadcrumb-item"><a  th:href="@{/user/userIndex}">Inicio </a></li>
+                        <li class="breadcrumb-item" ><a th:href="@{/user/userVisita}">Visita nuestro museo</a> </li>
                     </ol>
                   </nav>
               </div>
         <!--Fin Breadumbs-->
+        
+        
+        <!--Visita-->
+        <div class="container">
+          <div class="row">
+                
+            <div class="col-8">
+                <h3>Visita Nuestro Museo</h3>
+               <br>
+                <h5>Visita Guiada</h5>
+                <p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                    vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                    vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                  </p>
+                  <h5>Otro tipo</h5>
+                  <p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                      vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                      vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                    </p>
+                    <h5>Otro tipo</h5>
+                  <p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                      vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                      vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                    </p>
 
+            </div>
+            <div class="col-4">
+                <img th:src="@{/img/marta.jpg}" src="./static/img/marta.jpg"  class="" alt="...">
+
+          </div>
+            
+
+    </div>
+    <div class="container mt-5">
+      <div><h3>Horario de Atencion</h3></div>
+      <br>
+      <div class="row">
+          
+        <div class="col-6">
+            
+            <p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
+                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
+                </p>
+        </div>
+        <div class="col-5 ml-5">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12812.430181375375!2d-72.0757758!3d-36.5997188!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x237b4a57b1672fe4!2sMuseo%20Marta%20Colvin!5e0!3m2!1ses!2scl!4v1576253584661!5m2!1ses!2scl" width="500" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          
+
+      </div>
+        
+
+</div>
+
+    </div>
+
+        </div>
+ <br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        <br><br>
 </body>
 </html>

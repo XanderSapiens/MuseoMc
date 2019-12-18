@@ -31,6 +31,9 @@ public class FotoModel implements Serializable {
 	@Column(name = "nombre_foto")
 	private String nombreFoto;
 	
+	@Column(name = "img_foto")
+	private String imgFoto;
+	
 	@Column(name = "descr_foto")
 	private String descrFoto;
 	
@@ -41,18 +44,17 @@ public class FotoModel implements Serializable {
 	
 	public FotoModel() {
 	}
-	
-	
 
 
-	public FotoModel(int idFoto, String nombreFoto, String descrFoto, int anoFoto) {
+
+	public FotoModel(int idFoto, String nombreFoto, String imgFoto, String descrFoto, int anoFoto) {
 		super();
 		this.idFoto = idFoto;
 		this.nombreFoto = nombreFoto;
+		this.imgFoto = imgFoto;
 		this.descrFoto = descrFoto;
 		this.anoFoto = anoFoto;
 	}
-
 
 
 
@@ -61,9 +63,11 @@ public class FotoModel implements Serializable {
 	}
 
 
+
 	public void setIdFoto(int idFoto) {
 		this.idFoto = idFoto;
 	}
+
 
 
 	public String getNombreFoto() {
@@ -71,9 +75,23 @@ public class FotoModel implements Serializable {
 	}
 
 
+
 	public void setNombreFoto(String nombreFoto) {
 		this.nombreFoto = nombreFoto;
 	}
+
+
+
+	public String getImgFoto() {
+		return imgFoto;
+	}
+
+
+
+	public void setImgFoto(String imgFoto) {
+		this.imgFoto = imgFoto;
+	}
+
 
 
 	public String getDescrFoto() {
@@ -81,9 +99,11 @@ public class FotoModel implements Serializable {
 	}
 
 
+
 	public void setDescrFoto(String descrFoto) {
 		this.descrFoto = descrFoto;
 	}
+
 
 
 	public int getAnoFoto() {
@@ -91,10 +111,22 @@ public class FotoModel implements Serializable {
 	}
 
 
+
 	public void setAnoFoto(int anoFoto) {
 		this.anoFoto = anoFoto;
+	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 	
 	
 }
+	
+	
+
+
+	

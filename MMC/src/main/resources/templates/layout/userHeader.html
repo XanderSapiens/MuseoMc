@@ -30,48 +30,25 @@
 <!-- Iconify  -->
 <script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
 <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}"/>
+
 </head>
+<style th:type="text/css" th:inline="text">
+  body {
+
+    background: red;
+    
+  }
+</style>
+
+
 <body>
 	<header th:fragment="userHeader">
 		
-<!-- div class="container d-flex align-items-center justify-content-around  text-center mt-lg-3">
-	<nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light navbar-light">
-    	<button class="navbar-toggler align-self-sm-center" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        	<span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- a class="navbar-brand mr-4 ml-4" style="width:175px;height:0px;margin-top:-6px;" href="@{/user/userIndex}">
-        <img th:src="@{/img/iconmcsvg.svg}" src="./static/img/iconmcsvg.svg"  class="d-inline-block align-top align-self-start" >       
-        </a-->
-        
-        
-						
-                <!-- div class="collapse navbar-collapse" id="navbarNav">
-                  <div class="navbar-nav  mr-auto mt-2 mt-lg-0">
-                  		<a class="nav-link" style="width:175px;height:0px;margin-top:-6px;"	th:href="@{/userIndex/}">
-							<img th:src="@{/img/iconmc.jpg}" src="./static/img/iconmc.jpg" class="img-fluid d-block mx-auto">
-						</a>
-                          <a class="nav-item nav-link active mr-3 ml-3" href="@{/user/userIndex}">Inicio</a>
-                          <a class="nav-item nav-link mr-3 ml-3" href="@{/user/userQuienesSomos}">¿Quienes Somos?</a>
-                          <a class="nav-item nav-link mr-3 ml-3" href="@{/user/userMarta}">Marta Colvin</a>
-                          <a class="nav-item nav-link mr-3 ml-3" href="@{/user/userObras}" >Obras</a>
-                          <a class="nav-item nav-link mr-3 ml-3" href="@{/user/userVisita}" >Visita Nuestro Museo</a>
-                          <a class="nav-item nav-link mr-3 ml-3" href="@{/user/userMediacion}" >Mediacion y Educación</a>
-                        
-                        
-                  </div>
-                </div>
-        <br>
-        <br> 
-        <br> 
-        <br>         
-    
-    </nav>
-   
-</div -->
+
 
 <div class ="container d-flex align-items-center justify-content-around  text-center mt-lg-3">
  	 <nav
-			class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar navbar-color">
+			class="navbar navbar-light navbar-expand-lg clean-navbar navbar-color">
 			<!-- <a class="navbar-brand" href="/teacher/teacherList"><img
 				th:src="@{/img/logo.png}" src=".../static/img/logo.png" width="140"
 				height="60" alt=""></a> -->
@@ -84,15 +61,20 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav mr-auto">
 				
-					<li style="width:120px;height:10px;margin-top:-6px;"  class="nav-item">
+					<li style="width:128px;height:0px; margin-top:-30px;"  class="nav-item">
 						<a class="nav-link"
 						th:href="@{/user/userIndex}">
-							<img th:src="@{/img/iconmcsvg.svg}" src="./static/img/iconmcsvg.svg" class="img-fluid d-block mx-auto align-self-center">
+							<img th:src="@{/img/iconmcsvg.svg}" src="./static/img/iconmcsvg.svg" class="img-fluid d-block align-self-center">
 						</a>
 					</li>
+					
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/user/userIndex}">Inicio</a></li>
 
 					<li class="nav-item"><a class="nav-link"
 						th:href="@{/user/userQuienesSomos}">¿Quienes Somos?</a></li>
+					
+					
 
 					<li class="nav-item"><a class="nav-link"
 						th:href="@{/user/userMarta}">Marta Colvin</a></li>
@@ -107,12 +89,12 @@
 						th:href="@{/user/userMediacion}" >Mediacion y Educación</a></li>					
 
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
+				<!--form class="form-inline my-2 my-lg-0">
 					<a th:href="@{/user/login}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">Iniciar Sesión</button></a>
 					
 					
 					
-				</form>
+				</form-->
 			</div>
 		</nav>
 

@@ -20,6 +20,7 @@
 				<thead>
 					<tr class="text-center">
 						<th>Titulo</th>
+						<th>Imagen</th>
 						<th>Subtitulo</th>
 						<th>Contenido</th>
 					
@@ -33,6 +34,7 @@
 					<td th:text="${noticia.tituloNoticia}"></td>
 						<td th:text="${noticia.subtituloNoticia}"></td>
 					<td th:text="${noticia.contenidoNoticia}"></td>
+					<td th:text="${noticia.imgNoticia}"></td>
 				
 					<td style="text-align: center"><a th:href="@{'/noticia/noticiaForm/' + ${noticia.idNoticia}}"><button type="button" class="btn btn-success">Editar</button></a></td>
 					<td style="text-align: center"><a th:href="@{'/noticia/delete/' + ${noticia.idNoticia}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.ContactoModel;
+import com.example.demo.model.FotoModel;
 import com.example.demo.service.ContactoService;
-import com.example.demo.service.UsuarioService;
+import com.example.demo.service.FotoService;
+
 
 
 @Controller
@@ -21,6 +23,8 @@ public class UsuarioController {
 	
 	@Autowired
 	private ContactoService contactoService;
+	private FotoService fotoService;
+	
 	
 	
 	//Login
@@ -34,6 +38,8 @@ public class UsuarioController {
 	public String quienes() {
 		return "userQuienesSomos";
 	}
+	
+	
 	
 	@GetMapping("/userMarta")
 	public String marta() {
@@ -53,6 +59,18 @@ public class UsuarioController {
 	@GetMapping("/userMediacion")
 	public String mediacion() {
 		return "userMediacion";
+	}
+	
+	/*/Fotos
+	@GetMapping("/userFotos")
+	public String fotos() {
+		return "userFotos";
+	}*/
+	
+	//Noticias
+	@GetMapping("/userNoticias")
+	public String noticias() {
+		return "userNoticias";
 	}
 	
 	//Ver Tipos de Obras
@@ -98,5 +116,15 @@ public class UsuarioController {
 		contactoService.save(contactoModel);
 		return "redirect:/user/userIndex";
 	}
+	
+	//Listar
+	@GetMapping("/userFotos")
+	public String listarfoto(Model model) {
+		
+		model.addAttribute("fotos",fotoService.listAll());
+		return "userFotos";
+	}
+	
+	
 
 }
