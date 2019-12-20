@@ -7,39 +7,78 @@
 <body>
 	<header th:replace="layout/userheader :: header"></header>
 		<br>
+		
+		<!--Inicio Breadumbs-->
+        
+            <div class="container mt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent pl-0">
+                      <li class="breadcrumb-item"><a  th:href="@{/user/userIndex}">Inicio </a></li>
+                        <li class="breadcrumb-item active" >Detalle de noticia </li>
+                        
+                    </ol>
+                  </nav>
+              </div>
+        <!--Fin Breadumbs-->
+		
 		<div class="container mt-5 mb-5">
-			<br>
-			<div>
-				<h3>Lista de Noticias</h3>
+			
+			
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2 th:if="${noticia == null || noticia.idNoticia==0}">No
+					se pudieron obtener los datos de la noticia</h2>
+				<div th:if="${noticia!=null && noticia.idNoticia !=0}"
+					class="container ">
+					<h2>Detalles de noticia</h2>
+					<br>
+					<div class="row">
+						<div class="col-3 mr-3">
+							<div class="thumbnail-image justify-content-center">
+			                        <img style="width: 280px" th:src="@{/img/avatar.png}" src="./static/img/avatar.png" />
+			                      </div>
+						</div>
+						<div class="col-8 ml-4">
+						
+						<div class="d-flex mb-4">
+							<div class="mr-auto" >
+								<h3 th:text="${noticia.tituloNoticia}"> </h3>
+							</div>
+							<div class="ml-auto" >
+								<p> Fecha </p>
+							</div>
+						
+						</div>
+						<br>
+							
+							
+							
+							<div class="col">
+								<h5  th:text="${noticia.subtituloNoticia}"> </h5>
+							<br>
+							<p th:text="${noticia.contenidoNoticia}"> </p>
+							</div>
+							
+							<br>
+							
+							
+							
+						
+						</div>
+					
+					
+					</div>
+					
+					
+					
+
+					
+				</div>
 			</div>
-				
-			<br> 
+		</div>
+	
 			
-			
-			<table id="example" class="table table-bordered table-striped">
-				<thead>
-					<tr class="text-center">
-						<th>Titulo</th>
-						<th>Subtitulo</th>
-						<th>Contenido</th>
-					
-						
-						
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="noticia: ${noticias}">
-				
-					<td th:text="${noticia.tituloNoticia}"></td>
-						<td th:text="${noticia.subtituloNoticia}"></td>
-					<td th:text="${noticia.contenidoNoticia}"></td>
-				
-					
-				</tr>
-			</tbody>
-			
-			
-			</table>
 		
 		</div>
  <br><br><br>

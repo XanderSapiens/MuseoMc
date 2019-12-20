@@ -20,6 +20,7 @@
 <!--datables CSS básico-->
 <link href="../DataTables/datatables.min.css" rel="stylesheet"
 	th:href="@{/DataTables/datatables.min.css}">
+	<link th:href="@{/css/jquery.dynatable.css}" rel="stylesheet" href="../css/jquery.dynatable.css">
 	
 <!--datables estilo bootstrap 4 CSS-->
 <link
@@ -33,22 +34,18 @@
 
 </head>
 <style th:type="text/css" th:inline="text">
-  body {
-
-    background: red;
-    
-  }
+  
 </style>
 
 
-<body>
+<body >
 	<header th:fragment="userHeader">
 		
 
 
-<div class ="container d-flex align-items-center justify-content-around  text-center mt-lg-3">
+<div class ="container d-flex align-items-center justify-content-around  text-center mt-lg-3" style="background-color: #e4e6e7;">
  	 <nav
-			class="navbar navbar-light navbar-expand-lg clean-navbar navbar-color">
+			class="navbar navbar-light navbar-expand-lg clean-navbar ">
 			<!-- <a class="navbar-brand" href="/teacher/teacherList"><img
 				th:src="@{/img/logo.png}" src=".../static/img/logo.png" width="140"
 				height="60" alt=""></a> -->
@@ -106,7 +103,7 @@
 			
 		
 	</header>
-	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<!--  script th:src="@{/js/jquery-3.4.1.min.js}"></script-->
 	<script th:src="@{/js/popper.min.js}"></script>
 	<script th:src="@{/js/jquery-ui.min.js}"></script>
 	<script th:src="@{/js/datatables.min.js}"></script>

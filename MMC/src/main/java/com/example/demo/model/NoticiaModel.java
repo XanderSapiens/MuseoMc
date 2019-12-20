@@ -30,23 +30,23 @@ public class NoticiaModel implements Serializable {
 	private int idNoticia;
 	
 	
-	@Lob
+	
 	@Column(name = "titulo_noticia")
 	private String tituloNoticia;
 	
 	
-	@Lob
+	
 	@Column(name = "img_noticia")
 	private String imgNoticia;
 	
 	
-	@Lob
+	
 	@Column(name = "subtitulo_noticia")
 	private String subtituloNoticia;
 	
 	
 	
-	@Lob
+	
 	@Column(name = "contenido_noticia")
 	private String contenidoNoticia;
 	

@@ -15,7 +15,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent pl-0 ">
                       <li class="breadcrumb-item"><a  th:href="@{/user/userIndex}">Inicio </a></li>
-                        <li class="breadcrumb-item" ><a th:href="@{/user/userObras}">Obras</a> </li>
+                        <li class="breadcrumb-item active" >Obras </li>
                     </ol>
                   </nav>
               </div>
@@ -164,7 +164,7 @@
 
             /*#region responsive code begin*/
 
-            var MAX_WIDTH = 720;
+            var MAX_WIDTH = 980;
 
             function ScaleSlider() {
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
@@ -307,11 +307,14 @@
     </div>
                         
     <br>
-    <a th:href="@{/user/userFotos}" class="btn btn-secondary align-items-end">Ver Informacion</a>
+    <div class="d-flex justify-content-center">
+    	<a th:href="@{/user/userFotos}" class="btn btn-secondary mr-5" style="">Ver Informacion</a>
+    </div>
         </div>
 
  <br><br><br>
         <footer th:replace="layout/userFooter :: footer"></footer>
         <br><br>
+        <script type="text/javascript">jssor_1_slider_init();</script>
 </body>
 </html>

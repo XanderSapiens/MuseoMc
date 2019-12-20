@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.example.demo.model.ContactoModel;
 import com.example.demo.model.FotoModel;
+import com.example.demo.model.NoticiaModel;
 import com.example.demo.service.ContactoService;
 import com.example.demo.service.FotoService;
+import com.example.demo.service.NoticiaService;
 
 
 
@@ -23,7 +27,10 @@ public class UsuarioController {
 	
 	@Autowired
 	private ContactoService contactoService;
+	@Autowired
 	private FotoService fotoService;
+	@Autowired
+	private NoticiaService noticiaService;
 	
 	
 	
@@ -67,11 +74,7 @@ public class UsuarioController {
 		return "userFotos";
 	}*/
 	
-	//Noticias
-	@GetMapping("/userNoticias")
-	public String noticias() {
-		return "userNoticias";
-	}
+	
 	
 	//Ver Tipos de Obras
 	@GetMapping("/esculturas")
@@ -107,6 +110,7 @@ public class UsuarioController {
 		ContactoModel contactoModel = new ContactoModel();
 		model.addAttribute("contactoModel",contactoModel);
 		model.addAttribute("contactos",contactoService.listAll());
+		model.addAttribute("noticias",noticiaService.listAll());
 		return "userIndex";
 	}
 	
@@ -125,6 +129,12 @@ public class UsuarioController {
 		return "userFotos";
 	}
 	
+	@GetMapping("/getNoticia/{id}")
+	public String getNoticia(@PathVariable("id") Integer id,Model model ) {
+			model.addAttribute("noticia", noticiaService.getId(id));
+		
+		return "userNoticias";
+	}
 	
 
 }

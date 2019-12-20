@@ -24,7 +24,7 @@ public class NoticiaController {
 	@GetMapping("/noticiaForm")
 	public String formNoticia(Model model) {
 		NoticiaModel noticiaModel = new NoticiaModel();
-		model.addAttribute("noticialModel",noticiaModel);
+		model.addAttribute("noticiaModel",noticiaModel);
 		model.addAttribute("noticias",noticiaService.listAll());
 		return "noticiaForm";
 	}
