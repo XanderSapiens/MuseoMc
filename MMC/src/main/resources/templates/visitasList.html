@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/header :: head">
+	<meta charset="UTF-8">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/header :: header"></header>
+		<br><br>
+		<div class="container mt-5 mb-5">
+			<br>
+			<div align="center">
+				<h2>Lista de Visitas</h2>
+			</div>
+				
+			<br> 
+			<a href="/visita/visitaForm"><button type="button" class="btn btn-primary mb-3">Crear</button></a>
+			
+			<table id="example" class="table table-bordered table-striped">
+				<thead>
+					<tr class="text-center">
+						<th>Nombre</th>
+						<th>Descripcion</th>
+						<th>Horario</th>
+						<th>Fecha</th>
+						<th>Estado</th>
+						<th>Cantidad de personas</th>
+						<th>Editar</th>
+						<th>Eliminar</th>
+						
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="visita: ${visitas}">
+				
+					<td th:text="${visita.nombreVisita}"></td>
+					<td th:text="${visita.descrVisita}"></td>
+					<td th:text="${visita.horarioVisita}"></td>
+					<td th:text="${visita.fechaVisita}"></td>
+					<td th:text="${visita.estadoVisita}"></td>
+					<td th:text="${visita.cantPersonasVisita}"></td>
+					
+					
+					
+					
+					<!--  td><span
+						th:each="categoria,i : ${socioBuscado.categorias}"
+						th:text='| [ ${i.count}. ${categoria.nombreCategoria} - ${categoria.deporteCategoria.nombreDeporte} ] |'>
+					</span></td-->
+				
+					<td style="text-align: center"><a th:href="@{'/visita/visitaForm/' + ${visita.idVisita}}"><button type="button" class="btn btn-success">Editar</button></a></td>
+					<td style="text-align: center"><a th:href="@{'/visita/delete/' + ${visita.idVisita}}"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+				</tr>
+			</tbody>
+			
+			
+			</table>
+		
+		</div>
+		<br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
+
+
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+		<script th:src="@{/js/datatables.min.js}"></script>
+		<script th:src="@{/js/datatable-language.js}"></script>
+
+</body>
+</html>

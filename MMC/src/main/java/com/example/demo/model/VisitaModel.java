@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="visita")
@@ -33,13 +37,15 @@ public class VisitaModel implements Serializable {
 	@Column(name = "horario_visita")
 	private String horarioVisita;
 	
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "fecha_visita")
 	private Date fechaVisita;
 	
 	@Column(name = "estado_visita")
 	private String estadoVisita;
 	
-	@Column(name = "cantPersonas_visita")
+	@Column(name = "cantpersonas_visita")
 	private int cantPersonasVisita;
 
 	public VisitaModel() {

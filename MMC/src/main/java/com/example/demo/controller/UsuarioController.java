@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.model.ContactoModel;
 import com.example.demo.model.FotoModel;
 import com.example.demo.model.NoticiaModel;
+import com.example.demo.service.CollageService;
 import com.example.demo.service.ContactoService;
 import com.example.demo.service.FotoService;
 import com.example.demo.service.NoticiaService;
+import com.example.demo.service.ObraService;
 
 
 
@@ -31,6 +33,12 @@ public class UsuarioController {
 	private FotoService fotoService;
 	@Autowired
 	private NoticiaService noticiaService;
+	@Autowired
+	private CollageService collageService;
+	@Autowired
+	private ObraService obraService;
+	
+	
 	
 	
 	
@@ -53,8 +61,11 @@ public class UsuarioController {
 		return "userMarta";
 	}
 	
+	//Listar obras
 	@GetMapping("/userObras")
-	public String obras() {
+	public String obras(Model model) {
+		model.addAttribute("obras",obraService.listAll());
+		
 		return "userObras";
 	}
 	
@@ -121,7 +132,7 @@ public class UsuarioController {
 		return "redirect:/user/userIndex";
 	}
 	
-	//Listar
+	//Listar Fotos
 	@GetMapping("/userFotos")
 	public String listarfoto(Model model) {
 		
@@ -129,12 +140,36 @@ public class UsuarioController {
 		return "userFotos";
 	}
 	
+	//Listar Collages
+		@GetMapping("/userCollages")
+		public String listarCollage(Model model) {
+			
+			model.addAttribute("collages",collageService.listAll());
+			return "userCollages";
+		}
+	
+	//Ver detalle de una noticia
 	@GetMapping("/getNoticia/{id}")
 	public String getNoticia(@PathVariable("id") Integer id,Model model ) {
 			model.addAttribute("noticia", noticiaService.getId(id));
 		
 		return "userNoticias";
 	}
+	//Ver detalle de una foto
+	@GetMapping("/getFoto/{id}")
+	public String getFoto(@PathVariable("id") Integer id,Model model ) {
+			model.addAttribute("foto", fotoService.getId(id));
+		
+		return "userFotoDetail";
+	}
+	
+	//Ver detalle de una obra
+		@GetMapping("/getObra/{id}")
+		public String getObra(@PathVariable("id") Integer id,Model model ) {
+				model.addAttribute("obra", obraService.getId(id));
+			
+			return "userObraDetail";
+		}
 	
 
 }

@@ -2,7 +2,7 @@
 function ulWriter(rowIndex, record, columns, cellWriter) {
     var cssClass = "span4", li;
     if (rowIndex % 3 === 0) { cssClass += ' first'; }
-    li = '<li class="' + cssClass + '"><div class="thumbnail" style="padding: 10px; border: 1px #6c757d solid; margin-right: 10px; background-color:#fff"><br><div class="thumbnail-image">' + record.thumbnail + '</div><div class="caption"><br>' + record.caption + '</div></div></li>';
+    li = '<li class="' + cssClass + '"><div class="thumbnail align-item-center" style="padding: 10px; border: 1px #6c757d solid; margin-right: 10px; background-color:#fff; max-width: 230px; max-height: 480px; height: 480px"><br><div class="thumbnail-image">' + record.thumbnail + '</div><div class="caption"><br>' + record.caption + '</div></div></li>';
     return li;
   }
   

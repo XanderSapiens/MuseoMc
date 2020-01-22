@@ -7,12 +7,13 @@
 </head>
 	<body>
 		<header th:replace="layout/header :: header"></header>
-		<br><br><br>
+		<br><br>
 		<div class="container">
-			<br>
+			
 			<div align="center" class="mb-3">
 				<h2>Registrar Administrador</h2>
 			</div>
+			<br>
 			<div class="card" style="width: 40rem; margin: auto auto;">
 				<div class="card-body">
 					<br>
@@ -42,23 +43,14 @@
 						<div class="form-group">
 							<div class="row">
 								<div class="col-2">
-									<label for="apellidoPaterno">Apellido Paterno:</label>
+									<label for="apellidosAdmin">Apellidos:</label>
 								</div>
 								<div class="col-10">
-									<input type="text" name="apellidoPaterno" class="form-control" th:field="*{apellidoPaterno}" required>
+									<input type="text" name="apellidosAdmin" class="form-control" th:field="*{apellidosAdmin}" required>
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
-							<div class="row">
-								<div class="col-2">
-									<label for="apellidoMaterno">Apellido Materno:</label>
-								</div>
-								<div class="col-10">
-									<input type="text" name="apellidoMaterno" class="form-control" th:field="*{apellidoMaterno}" required>
-								</div>
-							</div>
-						</div>
+						
 						<div class="form-group">
 							<div class="row">
 								<div class="col-2">
@@ -116,6 +108,10 @@
 			</div>
 		
 		</div>
+		
+		<br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
 
 	</body>
 </html>

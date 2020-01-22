@@ -6,12 +6,13 @@
 </head>
 <body>
 	<header th:replace="layout/header :: header"></header>
-	<br><br><br>
+	<br><br>
 	<div class="container">
-			<br>
+			
 			<div align="center" class="mb-3">
 				<h2>Registrar Obra</h2>
 			</div>
+			<br>
 			<div class="card" style="width: 40rem; margin: auto auto;">
 				<div class="card-body">
 					<br>
@@ -24,7 +25,7 @@
 									<label for="nombreObra">Nombre:</label>
 								</div>
 								<div class="col-10">
-									<input type="text" name="nombreObra" class="form-control" th:field="*{nombreObra}" required>
+									<input type="text" name="nombreObra" placeholder="Ingrese el nombre de la obra" class="form-control" th:field="*{nombreObra}" required>
 								</div>
 							</div>
 						</div>
@@ -32,10 +33,10 @@
 						<div class="form-group">
 							<div class="row">
 								<div class="col-2">
-									<label for="tipoObra">Tipo:</label>
+									<label for="materialObra">Material:</label>
 								</div>
 								<div class="col-10">
-									<input type="text" name="tipoObra" class="form-control" th:field="*{tipoObra}" required>
+									<input type="text" name="materialObra" placeholder="Ingrese el tipo de material" class="form-control" th:field="*{materialObra}" required>
 								</div>
 							</div>
 						</div>
@@ -46,7 +47,32 @@
 									<label for="descrObra">Descripcion:</label>
 								</div>
 								<div class="col-10">
-									<input type="text" name="descrObra" class="form-control" th:field="*{descrObra}" required>
+									<textarea class="form-control" placeholder="Escriba la descripcion" rows="5" cols="15" name="descrObra" th:field="*{descrObra}" ></textarea>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="imgObra">Imagen:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="imgObra" placeholder="Ingrese ruta de la imagen" class="form-control" th:field="*{imgObra}" >
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="medidasObra">Medidas:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="medidasObra" placeholder="Ingrese las medidas" class="form-control" th:field="*{medidasObra}" >
+									
 								</div>
 							</div>
 						</div>
@@ -57,7 +83,7 @@
 									<label for="anoObra">Año:</label>
 								</div>
 								<div class="col-10">
-									<input type="number" name="anoObra" class="form-control" th:field="*{anoObra}" required>
+									<input type="number" name="anoObra" placeholder="Ingrese el año" class="form-control" th:field="*{anoObra}" required>
 								</div>
 							</div>
 						</div>
@@ -85,6 +111,10 @@
 			</div>
 		
 		</div>
+		
+		<br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
 
 </body>
 </html>

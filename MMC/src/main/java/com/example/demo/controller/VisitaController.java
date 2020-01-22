@@ -33,7 +33,7 @@ public class VisitaController {
 	@PostMapping("/save")
 	public String saveVisitas(@Valid VisitaModel visitaModel, Model model) {
 		visitaService.save(visitaModel);
-		return "redirect:/visita/visitaList";
+		return "redirect:/visita/visitasList";
 	}
 	
 	//Modificar
@@ -49,17 +49,17 @@ public class VisitaController {
 	}
 	
 	//Listar Todas las Noticias
-	@GetMapping("/visitaList")
+	@GetMapping("/visitasList")
 	public String listarVisitas(Model model) {
-		model.addAttribute("visita", visitaService.listAll());
-		return "visitaList";
+		model.addAttribute("visitas", visitaService.listAll());
+		return "visitasList";
 	}
 		
 	//Borrar una noticia por su id
 	@RequestMapping("/delete/{id}")
 	public String deleteVisita(@PathVariable(name = "id") int id) {
 		visitaService.delete(id);
-		return "redirect:/visita/visitaList";     
+		return "redirect:/visita/visitasList";     
 	}
 
 }

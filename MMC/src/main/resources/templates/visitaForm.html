@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header :: head">
+	<meta charset="UTF-8">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:replace="layout/header :: header"></header>
+	<br><br>
+	<div class="container">
+			
+			<div align="center" class="mb-3">
+				<h2>Registrar Visita</h2>
+			</div>
+			<br>
+			<div class="card" style="width: 40rem; margin: auto auto;">
+				<div class="card-body">
+					<br>
+					<form th:action="@{/visita/save}" th:object="${visitaModel}" method="post">
+						<input type="hidden" th:field="*{idVisita}" readonly="readonly" />
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="nombreVisita">Nombre:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="nombreVisita" class="form-control" th:field="*{nombreVisita}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="descrVisita">Descripcion:</label>
+								</div>
+								<div class="col-10">
+									<textarea class="form-control" name="descrVisita" rows="5" cols="44" th:field="*{descrVisita}"></textarea>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="horarioVisita">Horario:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="horarioVisita" class="form-control" th:field="*{horarioVisita}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="fechaVisita">Fecha:</label>
+								</div>
+								<div class="col-10">
+									<input type="date" name="fechaVisita" class="form-control" th:field="*{fechaVisita}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="estadoVisita">Estado:</label>
+								</div>
+								<div class="col-10">
+									<input type="text" name="estadoVisita" class="form-control" th:field="*{estadoVisita}" required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-2">
+									<label for="cantPersonasVisita">Cantidad de personas:</label>
+								</div>
+								<div class="col-10">
+									<input type="number" name="cantPersonasVisita" class="form-control" th:field="*{cantPersonasVisita}" required>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						<div class="form-group">
+							<div class="row">
+								<div class="col-10" style="margin: auto auto;">
+									<button type="submit" class="btn btn-primary btn-block">Registrar</button>
+								</div>
+							</div>
+						</div>
+						
+					
+					</form>
+			
+				</div>
+			
+			
+			</div>
+		
+		</div>
+		<br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
+
+</body>
+</html>

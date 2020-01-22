@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header :: head">
+<head th:replace="layout/userFooter :: foot">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+	
+	<link rel="stylesheet" type="text/css" href="../css/jquery.dynatable.css" />
+	
+	<!--  link href="./static/css/jquery.dynatable.css" rel="stylesheet" 
+	th:href="@{/css/jquery.dynatable.css}"-->
+	
+
+	
+	<title th:text="${title}"></title>
+	
+</head>
+<body>
+	<header th:replace="layout/userheader :: header"></header>
+		<br>
+		
+		<!--Inicio Breadumbs-->
+        
+        <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent pl-0 ">
+                      <li class="breadcrumb-item"><a  th:href="@{/user/userIndex}">Inicio </a></li>
+                        <li class="breadcrumb-item active" >Listado de Collage</li>
+                    </ol>
+                  </nav>
+              </div>
+        <!--Fin Breadumbs-->
+		
+		<div class="container mt-5 mb-5">
+			
+			<div align="left">
+				<h2>Listado de Collage</h2>
+			</div>
+			
+			<div>
+				<br> 
+			
+			
+				
+			</div>
+			
+			
+			<div th:each="collage: ${collages}">
+			
+			<div class="card mb-4" style="max-width: 1100px;">
+			  <div class="row no-gutters">
+			    <div class="col-3" >
+			      <img style="height: 270px; width: 270px" th:src="@{/img/avatar.png}" src="./static/img/avatar.png">
+			    </div>
+			    <div class="col-9">
+			      <div class="card-body">
+			        <h4 class="card-title" th:text="${collage.nombreCollage}"></h4>
+			        <p class="card-text" th:text="${collage.anoCollage}" ></p>
+			        <p class="card-text" th:text="${collage.descrCollage}"></p>
+			        
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			</div>
+			
+			
+				
+			
+			
+			
+		
+		</div>
+		
+		 <br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
+
+
+		
+		
+		
+		
+		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+  	<script th:src="@{/js/jquery.dynatable.js} " src="./static/js/jquery.dynatable.js"></script>
+    <script th:src="@{/js/dinos.js}" src="./static/js/dinos.js"></script>
+
+</body>
+</html>

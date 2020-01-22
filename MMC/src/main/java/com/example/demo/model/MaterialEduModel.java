@@ -1,13 +1,17 @@
 package com.example.demo.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="materialedu")
@@ -34,6 +38,10 @@ public class MaterialEduModel implements Serializable {
 	
 	@Column(name = "tipo_materialedu")
 	private String tipoMaterialEdu;
+	
+	//Relacion
+	@ManyToMany(mappedBy = "materiales")
+	private List<TallerModel> talleres;
 
 
 	public MaterialEduModel() {

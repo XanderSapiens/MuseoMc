@@ -1,13 +1,19 @@
 package com.example.demo.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="taller")
@@ -39,20 +45,29 @@ public class TallerModel implements Serializable {
 	private String horarioTaller;
 	
 	//Material hacer relacion
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name= "taller_materialedu", 
+	joinColumns = {@JoinColumn(name="idTaller")},
+	inverseJoinColumns = {@JoinColumn(name="idMaterialEdu")})
+	private List<MaterialEduModel> materiales;
+	
+	
 
 	public TallerModel() {
 		
 	}
 
 	public TallerModel(int idTaller, String nombreTaller, String descrTaller, String encargadoTaller,
-			int cantAlumnosTaller, String horarioTaller) {
-		
+			int cantAlumnosTaller, String horarioTaller, List<MaterialEduModel> materiales) {
+		super();
 		this.idTaller = idTaller;
 		this.nombreTaller = nombreTaller;
 		this.descrTaller = descrTaller;
 		this.encargadoTaller = encargadoTaller;
 		this.cantAlumnosTaller = cantAlumnosTaller;
 		this.horarioTaller = horarioTaller;
+		this.materiales = materiales;
 	}
 
 	public int getIdTaller() {
@@ -103,9 +118,19 @@ public class TallerModel implements Serializable {
 		this.horarioTaller = horarioTaller;
 	}
 
+	public List<MaterialEduModel> getMateriales() {
+		return materiales;
+	}
+
+	public void setMateriales(List<MaterialEduModel> materiales) {
+		this.materiales = materiales;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	
 	
 	
 	

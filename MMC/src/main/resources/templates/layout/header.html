@@ -82,6 +82,9 @@
 					<li class="nav-item dropdown my-2 mr-2">
 					<a class="nav-link"	th:href="@{/taller/tallerList}">Talleres</a></li>
 					
+					<li class="nav-item dropdown my-2 mr-2">
+					<a class="nav-link"	th:href="@{/visita/visitasList}">Visitas</a></li>
+					
 						
 					<!--  li class="nav-item dropdown my-2 mr-2">
         				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
@@ -98,9 +101,8 @@
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<ul class="navbar-nav mr-auto ">
-						<li class="nav-item dropdown my-2 mr-2">
-        					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-         						 Mi Perfil
+						<li class="nav-item my-2 mr-2">
+        					<a th:href="@{/user/userIndex}"><button class="btn btn-danger my-2 my-sm-0" type="button">Salir</button></a-->
         					</a>
         					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
          					 	<a class="dropdown-item" href="#">Action</a>

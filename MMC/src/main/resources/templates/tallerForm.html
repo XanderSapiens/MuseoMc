@@ -6,12 +6,12 @@
 </head>
 <body>
 	<header th:replace="layout/header :: header"></header>
-	<br><br><br>
+	<br><br>
 	<div class="container">
 			<br>
 			<div align="center" class="mb-3">
 				<h2>Registrar Taller</h2>
-			</div>
+			</div><br>
 			<div class="card" style="width: 40rem; margin: auto auto;">
 				<div class="card-body">
 					<br>
@@ -73,6 +73,30 @@
 							</div>
 						</div>
 						
+						<div class="form-group">
+						<div class="row">
+							<div class="col-2">
+								<label for="Material">Material:</label>
+							</div>
+							<div class="col">
+								<select id="buscador" th:name="materialEdu" class="col-12">
+									<option th:each="materialEdu: ${materiales}"
+										th:value="${materialEdu.idMaterialEdu}" th:text="${materialEdu.nombreMaterialEdu}" th:selected="${materialEdu.idMaterialEdu == idMateriales}" th:if="${tallerModel.idTaller!=0} AND ${idMateriales != null}">
+									</option>
+									<option th:each="materialEdu: ${materiales}"
+										th:value="${materialEdu.idMaterialEdu}" th:text="${materialEdu.nombreMaterialEdu}" 
+										th:if="${tallerModel.idTaller==0} OR ${idMateriales == null}">
+									</option>
+								</select>
+							</div>
+							<div class="col">
+					        	<span class="badge badge-pill badge-primary" th:each="materialEdu: ${materiales}" th:text="${materialEdu.nombreMaterialEdu}"></span>
+							</div>
+						</div>
+					</div>
+					
+					
+						
 						
 						
 						
@@ -94,6 +118,23 @@
 			</div>
 		
 		</div>
+		<br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
+		
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#buscador').select2();
+			$('#buscador2').select2();
+			
+		});
+	</script>
+	
+	<!-- Select2 -->
+	<script th:src="@{/js/select2.js}"></script>
 
 </body>
+
+
 </html>

@@ -4,6 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title th:text="${title}"></title>
+
+    <!-- SYILE DE TIMELINE -->
+    
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="/css/timeline.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/timeline.scss" />
+	<link rel="stylesheet" type="text/css" href="/css/jquery.dynatable.css" />
+	
+	
+	
+	
+	
 </head>
 <body>
 	<header th:replace="layout/userHeader :: header"></header>
@@ -20,98 +32,72 @@
                   </nav>
               </div>
         <!--Fin Breadumbs-->
-
+        
+        <br>
+		<!--OBRAS  -->
         <div class="container align-items-center">
-            <div class="row text-center">
-                <div class="col-4">
-                    <div class="h4 ml-5 text-center">Esculturas
-                    <br><br>
-                    </div>
-                     <div>
-                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
-                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
-                              </p><br>
-                   		<form class="form-inline my-2 my-lg-0">
-							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
-						</form>
-                    
-                    </div>
-                </div>
-                
-                
-                <div class="col-4">
-                    <div class="h4 ml-5 text-center">Bocetos
-                    <br><br>
-                    </div>
-                     <div>
-                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
-                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
-                              </p><br>
-                   		<form class="form-inline my-2 my-lg-0">
-							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
-						</form>
-                    
-                    </div>
-                </div>
-                
-                
-                <div class="col-4">
-                    <div class="h4 ml-5 text-center">Grabados
-                    <br><br>
-                    </div>
-                     <div>
-                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
-                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
-                              </p><br>
-                   		<form class="form-inline my-2 my-lg-0">
-							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
-						</form>
-                    
-                    </div>
-                </div>
-
-            </div>
+        <div>
+         <h2 class="text-center">Obras del museo</h2>
+        </div>
+        <br>
+        <br>
+        <h6>Cronologia de las obras</h6>
+            <div class="timeline" data-option-name="value">
+            <div class="timeline__wrap">
+                <div class="timeline__items">
+					<!-- ITERACION DE OBRAS -->
+                    <div th:each="obra: ${obras}" class="timeline__item">
+                        <div class="timeline__content">
+                            <div class="card mb-3 bg-transparent border-0 ">
+                                <div class="row no-gutters">
+                                  
+                                  <div class="col-md-8 " style="max-height: 250px; max-width: 400px;">
+                                    <div class="card-body" >
+                                      <h4 th:text="${obra.nombreObra}" class="card-title text-justify"></h4>
+                                      <p th:text="${obra.anoObra}" class="card-text text-justify"></p>
+                                      <p th:text="${obra.materialObra}" class="card-text text-justify"></p>
+                                      
+                                      
+                                          
+                                          
+                                        
+                                      
+                                      
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="col-2 justify-content-around pl-4 ">
+                                    <img th:src="${obra.imgObra}"  style="max-width: 100px; max-heigth: 215px;">
+                                     <br> <br>
+                                     <div>
+                                     	<a type="button" th:href="@{/user/getObra/{id}(id=${obra.idObra})}" class="btn btn-secondary">Detalles</a>
+                                     </div>
+                                           
+                              
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
             
-            <div class="row text-center mt-5">
-                <div class="col-4">
-                    <div class="h4 ml-5 text-center">Collage
-                    <br><br>
+            
+            
                     </div>
-                     <div>
-                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
-                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
-                              </p><br>
-                   		<form class="form-inline my-2 my-lg-0">
-							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
-						</form>
-                    
-                    </div>
-                </div>
-                
-                <div class="col-4">
-                    <div class="h4 ml-5 text-center">Maquetas
-                    <br><br>
-                    </div>
-                     <div>
-                    	<p class="text-justify">Praesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna, 
-                                vel scelerisque nisl consecteturPraesent commodo cursus magna, vel scelerisque nisl consecteturPraesent commodo cursus magna,
-                              </p><br>
-                   		<form class="form-inline my-2 my-lg-0">
-							<a th:href="@{/user/esculturas}"><button class="btn btn-outline-dark my-2 mr-2 my-sm-0" type="button">More Info</button></a>
-						</form>
-                    
-                    </div>
-                </div>
 
+            
+                </div>
+            
             </div>
+        </div>
+            
 
         </div>
+        <!-- FIN DE OBRAS -->
         
         <div class="container">
          		 <!--GALERIA SLIDE-->
 
                         <br><br><br>
-                        <div class="h3 mb-2">Galeria </div>
+                        <div class="h3 mb-2">Galeria de Collage </div>
                         <br>
                         <script th:src="@{/js/jssor.slider-28.0.0.min.js}" type="text/javascript"></script>
                         
@@ -308,13 +294,32 @@
                         
     <br>
     <div class="d-flex justify-content-center">
-    	<a th:href="@{/user/userFotos}" class="btn btn-secondary mr-5" style="">Ver Informacion</a>
+    	<a th:href="@{/user/userCollages}" class="btn btn-secondary mr-5" style="">Ver Informacion</a>
     </div>
         </div>
 
- <br><br><br>
+ <br><br><br><br>
         <footer th:replace="layout/userFooter :: footer"></footer>
-        <br><br>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    
+    <script th:src="@{/js/timeline.min.js}" src="./static/js/timeline.min.js"></script>
+        <script th:src="@{/js/time.js}" src="./static/js/time.js"></script>
+        <script th:src="@{/js/timeline.js}" src="./static/js/timeline.js"></script>    
+        
+        
+    	 
+    	 
+    	 
+    	 
+    	 
+        
         <script type="text/javascript">jssor_1_slider_init();</script>
+        <!--  script type="text/javascript">
+        timeline(document.querySelectorAll('.timeline'));
+        jQuery('.timeline').timeline();
+        </script>-->
 </body>
 </html>

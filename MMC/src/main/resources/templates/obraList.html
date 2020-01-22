@@ -6,7 +6,7 @@
 </head>
 <body>
 	<header th:replace="layout/header :: header"></header>
-		<br><br><br>
+		<br><br>
 		<div class="container mt-5 mb-5">
 			<br>
 			<div align="center">
@@ -14,14 +14,17 @@
 			</div>
 				
 			<br> 
-			<a href="/obra/obraForm"><button type="button" class="btn btn-primary mb-3">Crear</button></a>
+			<a href="/obra/obraForm"><button type="button" class="btn btn-primary mb-3">Registrar</button></a>
 			
 			<table id="example" class="table table-bordered table-striped">
 				<thead>
 					<tr class="text-center">
 						<th>Nombre</th>
-						<th>Tipo</th>
+						<th>Material</th>
 						<th>Descripcion</th>
+						<th>Ruta imagen</th>
+						
+						<th>Medidas</th>
 						<th>Año</th>
 						<th>Editar</th>
 						<th>Eliminar</th>
@@ -34,8 +37,10 @@
 					<tr th:each="obra: ${obras}">
 				
 					<td th:text="${obra.nombreObra}"></td>
-					<td th:text="${obra.tipoObra}"></td>
+					<td th:text="${obra.materialObra}"></td>
 					<td th:text="${obra.descrObra}"></td>
+					<td th:text="${obra.imgObra}"></td>
+					<td th:text="${obra.medidasObra}"></td>
 					<td th:text="${obra.anoObra}"></td>
 				
 					<td style="text-align: center"><a th:href="@{'/obra/obraForm/' + ${obra.idObra}}"><button type="button" class="btn btn-success">Editar</button></a></td>
@@ -47,6 +52,9 @@
 			</table>
 		
 		</div>
+		<br><br><br><br>
+        <footer th:replace="layout/userFooter :: footer"></footer>
+        
 
 
 		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>

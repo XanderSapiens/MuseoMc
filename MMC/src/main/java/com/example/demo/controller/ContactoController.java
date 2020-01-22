@@ -35,7 +35,7 @@ public class ContactoController {
 	@PostMapping("/save")
 	public String saveContacto(@Valid ContactoModel contactoModel, Model model) {
 		contactoService.save(contactoModel);
-		return "redirect:/user/userIndex";
+		return "redirect:/contacto/contactoList";
 	}
 	
 	//Modificar

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.TallerModel;
+import com.example.demo.service.MaterialEduService;
 import com.example.demo.service.TallerService;
 
 @Controller
@@ -19,6 +20,9 @@ public class TallerController {
 	
 	@Autowired
 	private TallerService tallerService;
+	
+	@Autowired
+	private MaterialEduService materialEduService ;
 
 	/*Crear*/
 	@GetMapping("/tallerForm")
@@ -26,6 +30,7 @@ public class TallerController {
 		TallerModel tallerModel = new TallerModel();
 		model.addAttribute("tallerModel",tallerModel);
 		model.addAttribute("taller",tallerService.listAll());
+		model.addAttribute("materiales", materialEduService.listAll());
 		return "tallerForm";
 	}
 	
@@ -52,6 +57,7 @@ public class TallerController {
 	@GetMapping("/tallerList")
 	public String listarTalleres(Model model) {
 		model.addAttribute("taller", tallerService.listAll());
+		model.addAttribute("materiales", materialEduService.listAll());
 		return "tallerList";
 	}
 		

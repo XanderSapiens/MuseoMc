@@ -46,11 +46,8 @@ public class AdminModel implements Serializable {
 	@Column(name = "rut_admin")
 	private String rutAdmin;
 	
-	@Column(name = "apellido_materno")
-	private String apellidoMaterno;
-	
-	@Column(name = "apellido_paterno")
-	private String apellidoPaterno;
+	@Column(name = "apellidos_admin")
+	private String apellidosAdmin;
 	
 	@Column(name = "telefono_admin")
 	private long telefonoAdmin;
@@ -81,13 +78,12 @@ public class AdminModel implements Serializable {
 		
 	}
 
-	public AdminModel(int idAdmin, String nombreAdmin, String rutAdmin, String apellidoMaterno, String apellidoPaterno,
+	public AdminModel(int idAdmin, String nombreAdmin, String rutAdmin, String apellidosAdmin,
 			long telefonoAdmin, Date fechaNacAdmin, String direccionAdmin, @Email String emailAdmin) {
 		this.idAdmin = idAdmin;
 		this.nombreAdmin = nombreAdmin;
 		this.rutAdmin = rutAdmin;
-		this.apellidoMaterno = apellidoMaterno;
-		this.apellidoPaterno = apellidoPaterno;
+		this.apellidosAdmin = apellidosAdmin;
 		this.telefonoAdmin = telefonoAdmin;
 		this.fechaNacAdmin = fechaNacAdmin;
 		this.direccionAdmin = direccionAdmin;
@@ -118,20 +114,12 @@ public class AdminModel implements Serializable {
 		this.rutAdmin = rutAdmin;
 	}
 
-	public String getApellidoMaterno() {
-		return apellidoMaterno;
+	public String getApellidosAdmin() {
+		return apellidosAdmin;
 	}
 
-	public void setApellidoMaterno(String apellidoMaterno) {
-		this.apellidoMaterno = apellidoMaterno;
-	}
-
-	public String getApellidoPaterno() {
-		return apellidoPaterno;
-	}
-
-	public void setApellidoPaterno(String apellidoPaterno) {
-		this.apellidoPaterno = apellidoPaterno;
+	public void setApellidosAdmin(String apellidosAdmin) {
+		this.apellidosAdmin = apellidosAdmin;
 	}
 
 	public long getTelefonoAdmin() {

@@ -5,11 +5,10 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	
-	
-	
+
 	<title th:text="${title}"></title>
+	
+	<link rel="stylesheet" type="text/css" href="/css/jquery.dynatable.css" />
 </head>
 <body>
 	<header th:replace="layout/userHeader :: header"></header>
@@ -72,7 +71,7 @@
                       
                       <h5>Contactanos</h5>
                       <br>
-                      <form th:action="@{/contacto/save}" th:object="${contactoModel}" method="post">
+                      <form th:action="@{/user/userIndex}" th:object="${contactoModel}" method="post">
                       	<input type="hidden" th:field="*{idContacto}" readonly="readonly" />
                       	
                      
@@ -152,13 +151,25 @@
 			                      <div class="thumbnail-image justify-content-center">
 			                        <img style="height: 205px;" th:src="@{/img/avatar.png}" src="./static/img/avatar.png" />
 			                      </div>                  
-			                       <div class="caption">
+			                       <div class="caption ">
 			                          <h4 th:text="${noticia.tituloNoticia}"></h4>
-			                          <p th:text="${noticia.subtituloNoticia}"></p>
+			                          <div style="max-width: 205px; max-height: 400px"  class="align-items-center">
+			                          		<p th:text="${noticia.subtituloNoticia}"></p>
+			                          </div>
+			                          
 			                          <p>Year: 1982</p>
-			                          <p> 
-			                          <a type="button" th:href="@{/user/getNoticia/{id}(id=${noticia.idNoticia})}" class="btn btn-secondary">Ver Mas</a>
-			                          </p>
+			                          
+			                          <div class="d-flex">
+			                          		<div class="mb-auto">
+					                          	<p> 
+					                          		<a type="button" th:href="@{/user/getNoticia/{id}(id=${noticia.idNoticia})}" class="btn btn-secondary">Ver Mas</a>
+					                          	</p>
+			                          		</div>
+			                          
+			                          </div>
+			                          
+			                          
+			                          
 			                         
 			                        </div>
 			                    </div>
@@ -170,6 +181,7 @@
                     <!-- ... //-->
                     
                   </ul>
+                  <!-- FIN NOTICIAS -->
                         
                         
                         
@@ -426,9 +438,9 @@
             </div>
 
         <!--fin de secciones-->
-        <br><br><br>
+        <br><br><br><br>
         <footer th:replace="layout/userFooter :: footer"></footer>
-        <br><br>
+        
         
         
  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>	
